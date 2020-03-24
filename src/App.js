@@ -9,7 +9,7 @@ import HeaderLinks from './components/Header/HeaderLinks';
 import Parallax from "./components/Parallax/Parallax";
 import GridContainer from "./components/Grid/GridContainer";
 import GridItem from './components/Grid/GridItem';
-import Button from './components/CustomButtons/Button';
+// import Button from './components/CustomButtons/Button';
 import Footer from "./components/Footer/Footer.js";
 import CheckList from "./components/CheckList/CheckList";
 
@@ -27,7 +27,6 @@ function App(props) {
   const classes = useStyles();
   const openCart = useCart();
   const orders = useOrders();
-  console.log(orders)
   return (
     <div className="App">
       <Header

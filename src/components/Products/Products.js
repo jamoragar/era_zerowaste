@@ -13,7 +13,7 @@ const useStyles = makeStyles(styles);
 
 export default function Products(props) {
   const classes = useStyles();
-  const {orders, setOrders } = props;
+  const {state, dispatch } = props;
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -27,19 +27,19 @@ export default function Products(props) {
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
-            <CardItem title={'Producto 1'} description={'asdasdasdasdsad'} orders={orders} setOrders={setOrders} />
+            <CardItem title={'Producto 1'} description={'asdasdasdasdsad'} orders={state.order} dispatch={dispatch} />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <CardItem title={'Producto 2'} description={'asdasdasdasdsad'} orders={orders} setOrders={setOrders} />
+            <CardItem title={'Producto 2'} description={'asdasdasdasdsad'} orders={state.order} dispatch={dispatch} />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <CardItem title={'Producto 3'} description={'asdasdasdasdsad'} orders={orders} setOrders={setOrders} />
+            <CardItem title={'Producto 3'} description={'asdasdasdasdsad'} orders={state.order} dispatch={dispatch} />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <CardItem title={'Producto 4'} description={'asdasdasdasdsad'} orders={orders} setOrders={setOrders} />
+            <CardItem title={'Producto 4'} description={'asdasdasdasdsad'} orders={state.order} dispatch={dispatch} />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <CardItem title={'Producto 5'} description={'asdasdasdasdsad'} orders={orders} setOrders={setOrders} />
+            <CardItem title={'Producto 5'} description={'asdasdasdasdsad'} orders={state.order} dispatch={dispatch} />
           </GridItem>
         </GridContainer>
       </div>

@@ -1,13 +1,13 @@
 import React from "react";
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Button from "../CustomButtons/Button";
 
 import styles from "../../assets/jss/material-kit-react/components/cardStyle"
@@ -15,7 +15,7 @@ const useStyles = makeStyles(styles);
 
 export default function CardItem(props) {
     const classes = useStyles();
-    const { img, title, description, price, orders, setOrders } = props;
+    const { title, description, price, dispatch } = props;
 
     const order = {
         title: title,
@@ -24,8 +24,11 @@ export default function CardItem(props) {
     };
 
     const addToOrder = () => {
-        console.log(order)
-        setOrders([...orders, order])
+        const newOrder = { order }
+        dispatch({
+            type: 'ADD_ORDER',
+            payload: newOrder
+        });
     }
 
     return (
@@ -56,7 +59,7 @@ export default function CardItem(props) {
                         id={title}
                         color="era"
                         size="sm"
-                        onClick={() => addToOrder()}
+                        onClick={addToOrder}
                     >
                         <i className="fas fa-shopping-cart" />
                         Comprar

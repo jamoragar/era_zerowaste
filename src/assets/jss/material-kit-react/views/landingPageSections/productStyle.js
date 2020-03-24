@@ -1,5 +1,3 @@
-import { title } from "../../../material-kit-react";
-
 const productStyle = {
   section: {
     padding: "70px 0",
